@@ -1,0 +1,8 @@
+torch
+torchvision
+mxnet>=1.5.0
+gluonnlp>=0.6.0
+sentencepiece>=0.1.6
+transformers
+tensorflow
+konlpy
