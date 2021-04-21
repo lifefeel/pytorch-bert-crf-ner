@@ -57,7 +57,7 @@ def main(parser):
             continue
         convert_keys[new_key_name] = v
 
-    model.load_state_dict(convert_keys)
+    model.load_state_dict(convert_keys, strict=False)
     model.eval()
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
@@ -71,7 +71,7 @@ def main(parser):
     while(True):
         input_text = input("문장을 입력하세요: ")
         list_of_input_ids = tokenizer.list_of_string_to_list_of_cls_sep_token_ids([input_text])
-        x_input = torch.tensor(list_of_input_ids).long()
+        x_input = torch.tensor(list_of_input_ids).long().to(device)
 
         ## for bert alone
         # y_pred = model(x_input)

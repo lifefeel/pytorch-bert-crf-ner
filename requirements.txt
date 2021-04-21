@@ -6,3 +6,4 @@ sentencepiece>=0.1.6
 transformers
 tensorflow
 konlpy
+pytorch-crf
